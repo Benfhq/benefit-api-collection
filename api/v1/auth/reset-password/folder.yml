@@ -1,0 +1,7 @@
+info:
+  name: reset-password
+  type: folder
+  seq: 8
+
+request:
+  auth: inherit

@@ -1,0 +1,40 @@
+info:
+  name: Liveness probe
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/healthz"
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/healthz"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "key_0": "string",
+            "key_1": "string"
+          }

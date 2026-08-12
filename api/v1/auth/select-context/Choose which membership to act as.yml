@@ -1,0 +1,109 @@
+info:
+  name: Choose which membership to act as
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/auth/select-context"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "refresh_token": "string",
+        "employee_id": "012bd58a-4599-ba16-23f6-ee2df35f06ed"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/auth/select-context"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "refresh_token": "string",
+            "employee_id": "012bd58a-4599-ba16-23f6-ee2df35f06ed"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "access_token": "string",
+            "expires_in": 2959,
+            "token_type": "bearer",
+            "must_change_password": false
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/auth/select-context"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "refresh_token": "string",
+            "employee_id": "012bd58a-4599-ba16-23f6-ee2df35f06ed"
+          }
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }

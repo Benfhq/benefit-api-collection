@@ -1,0 +1,150 @@
+info:
+  name: Update an employee
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/v1/corporate/employees/:employee_id"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  params:
+    - name: employee_id
+      value: f6cf9c14-d010-b05d-5c3f-44341cff657d
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "full_name": null,
+        "employee_code": "string",
+        "department": "string",
+        "job_title": null,
+        "joined_at": null
+      }
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employees/:employee_id"
+      method: PATCH
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: employee_id
+          value: f6cf9c14-d010-b05d-5c3f-44341cff657d
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "full_name": null,
+            "employee_code": "string",
+            "department": "string",
+            "job_title": null,
+            "joined_at": null
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "8a429c4a-3f33-1332-f1d0-34645555cd18",
+            "user_id": "8808097f-dae5-47d2-2a5c-aaf3a553ac34",
+            "email": "string",
+            "full_name": "string",
+            "organization_id": "cd76aaed-94c1-a517-353a-224db1750f29",
+            "entity_id": "ea5a5be9-02ee-a253-0146-7e2aaa23eb9a",
+            "entity_code": "string",
+            "roles": [
+              "admin",
+              "finance"
+            ],
+            "employee_code": "string",
+            "department": null,
+            "job_title": "string",
+            "status": "offboarded",
+            "joined_at": null
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employees/:employee_id"
+      method: PATCH
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: employee_id
+          value: f6cf9c14-d010-b05d-5c3f-44341cff657d
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "full_name": null,
+            "employee_code": "string",
+            "department": "string",
+            "job_title": null,
+            "joined_at": null
+          }
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }

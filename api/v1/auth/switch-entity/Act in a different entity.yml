@@ -1,0 +1,117 @@
+info:
+  name: Act in a different entity
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/auth/switch-entity"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "refresh_token": "TNysB5jUEd70oZUwNzTWKqxJwuEAFLSgS63l4W_gXhN454-Q-awGuBx9qg6n2eYX",
+        "entity_id": "49983e16-d665-4653-82e9-830924931aaa"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/auth/switch-entity"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "refresh_token": "string",
+            "entity_id": "57e9e8cf-dbd2-e6ec-43a1-a9fe7ba85746"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "persona": "corporate_admin",
+            "access_token": null,
+            "refresh_token": "string",
+            "expires_in": 1939,
+            "token_type": "bearer",
+            "must_change_password": false
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/auth/switch-entity"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "refresh_token": "string",
+            "entity_id": "57e9e8cf-dbd2-e6ec-43a1-a9fe7ba85746"
+          }
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }
+
+docs: |-
+  Exchange the current session for one in another of the caller's entities.
+
+  Returns a new access token *and* a rotated refresh token; the ones presented
+  here stop working.

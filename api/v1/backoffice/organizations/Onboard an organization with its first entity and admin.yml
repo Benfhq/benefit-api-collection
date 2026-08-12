@@ -1,0 +1,163 @@
+info:
+  name: Onboard an organization with its first entity and admin
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/backoffice/organizations"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "InboxOS Labs"
+      }
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/backoffice/organizations"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      body:
+        type: json
+        data: |-
+          {
+            "name": "string",
+            "first_entity": {
+              "name": "string",
+              "code": "string",
+              "country_code": "st",
+              "currency": "str",
+              "registration_no": null,
+              "tax_id": null
+            },
+            "admin_email": "Wqz@asP.jd",
+            "admin_full_name": "string",
+            "slug": "string",
+            "primary_contact_name": null,
+            "primary_contact_email": null,
+            "primary_contact_phone": null
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "organization": {
+              "id": "7b6bd146-f8dc-6bbe-36e0-b1532e22bde1",
+              "name": "string",
+              "slug": "string",
+              "status": "suspended",
+              "primary_contact_name": null,
+              "primary_contact_email": "string",
+              "primary_contact_phone": null
+            },
+            "entity": {
+              "id": "3b019283-24c1-8d34-101f-f0c7c4309fe8",
+              "organization_id": "4ea1fa97-5f3c-7572-a02f-6855b5aad2b1",
+              "name": "string",
+              "code": "string",
+              "country_code": "string",
+              "currency": "string",
+              "registration_no": "string",
+              "tax_id": null,
+              "status": "active"
+            },
+            "admin": {
+              "employee_id": "321ef4a1-7a6d-49e4-88cb-ed2cae646a29",
+              "email": "string",
+              "temp_password": "string"
+            }
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/backoffice/organizations"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      body:
+        type: json
+        data: |
+          {
+            "name": "string",
+            "first_entity": {
+              "name": "string",
+              "code": "string",
+              "country_code": "st",
+              "currency": "str",
+              "registration_no": null,
+              "tax_id": null
+            },
+            "admin_email": "Wqz@asP.jd",
+            "admin_full_name": "string",
+            "slug": "string",
+            "primary_contact_name": null,
+            "primary_contact_email": null,
+            "primary_contact_phone": null
+          }
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }

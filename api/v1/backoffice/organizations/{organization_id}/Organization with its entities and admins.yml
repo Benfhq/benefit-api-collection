@@ -1,0 +1,105 @@
+info:
+  name: Organization with its entities and admins
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: organization_id
+      value: 49983e16-d665-4653-82e9-830924931aaa
+      type: path
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: organization_id
+          value: fd439814-7537-5822-bf7b-825a81b69845
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "039885f9-ec18-fdd9-0b41-a870e6b45889",
+            "name": "string",
+            "slug": "string",
+            "status": "active",
+            "primary_contact_name": "string",
+            "primary_contact_email": null,
+            "primary_contact_phone": null
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: organization_id
+          value: fd439814-7537-5822-bf7b-825a81b69845
+          type: path
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }

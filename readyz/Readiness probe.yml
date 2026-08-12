@@ -1,0 +1,42 @@
+info:
+  name: Readiness probe
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/healthz"
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/readyz"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+
+docs: |-
+  Checks every dependency the API needs to serve traffic.
+
+  The broker counts: without RabbitMQ the API cannot dispatch work, so it
+  is not ready even though it can still answer reads.

@@ -1,0 +1,63 @@
+info:
+  name: Entities this admin can act in
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/v1/corporate/entities"
+  headers:
+    - name: Accept
+      value: application/json
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/entities"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          [
+            {
+              "id": "a0ba2e93-38c6-ce88-0bf1-65a70d243e70",
+              "name": "string",
+              "code": "string",
+              "country_code": "string",
+              "currency": "string"
+            },
+            {
+              "id": "9f32ed78-4afe-9a26-8808-7847fc7e2aae",
+              "name": "string",
+              "code": "string",
+              "country_code": "string",
+              "currency": "string"
+            }
+          ]
+
+docs: |-
+  Every entity the caller administers — the switcher's list.
+
+  Only the one matching the current token is readable *through* the other
+  endpoints; switch with ``POST /auth/switch-entity`` to work in another.

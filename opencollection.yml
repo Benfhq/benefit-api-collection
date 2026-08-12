@@ -1,0 +1,19 @@
+opencollection: 1.0.0
+
+info:
+  name: benefits-api
+
+request:
+  variables:
+    - name: baseUrl
+      value: /
+
+docs:
+  content: Central API for the benefits main app, backoffice and corporate portal
+  type: text/markdown
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

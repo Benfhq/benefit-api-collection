@@ -1,0 +1,146 @@
+info:
+  name: Add a corporate admin, with one membership per entity they administer
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/admins"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  params:
+    - name: organization_id
+      value: 49eda4d3-728a-4c01-8478-8a15a8a68b28
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "email": "nilesh@chronon.co.in",
+        "full_name": "Nilesh Pant",
+        "entity_ids": [
+          "abd88f0e-2da9-4a86-8168-45cf5cca649d"
+        ],
+        "roles": [
+          "admin"
+        ]
+      }
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/admins"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: organization_id
+          value: fd439814-7537-5822-bf7b-825a81b69845
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "email": "zn9oT8GunV7Ul@XNjRJmeOZdLwxtKiHWPZHGRcozFHyDWHA.cwzh",
+            "full_name": "string",
+            "entity_ids": [
+              "257ea05b-121f-eb9d-8efa-6cadd0ea3d32"
+            ],
+            "roles": [
+              "admin"
+            ]
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "user_id": "35a691e7-11a2-9d6c-8243-6b4c7ae82cc6",
+            "email": "string",
+            "temp_password": "string"
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/admins"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: organization_id
+          value: fd439814-7537-5822-bf7b-825a81b69845
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "email": "zn9oT8GunV7Ul@XNjRJmeOZdLwxtKiHWPZHGRcozFHyDWHA.cwzh",
+            "full_name": "string",
+            "entity_ids": [
+              "257ea05b-121f-eb9d-8efa-6cadd0ea3d32"
+            ],
+            "roles": [
+              "admin"
+            ]
+          }
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }

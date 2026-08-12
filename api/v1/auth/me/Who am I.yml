@@ -1,0 +1,65 @@
+info:
+  name: Who am I
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/v1/auth/me"
+  headers:
+    - name: Accept
+      value: application/json
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/auth/me"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "persona": "employee",
+            "email": "string",
+            "full_name": "string",
+            "user_id": "d0b7e223-9d90-8478-6511-53a7bb418773",
+            "must_change_password": false,
+            "membership": {
+              "employee_id": "ca2a6c55-2ab8-9b76-d222-7e24c1cdd5d9",
+              "organization_id": "bece3063-a938-640c-890f-ea94e0307996",
+              "organization_name": "string",
+              "entity_id": "c36626ca-e3fe-a810-1967-9f0f53dc3000",
+              "entity_name": "string",
+              "entity_code": "string",
+              "roles": [
+                "admin",
+                "admin"
+              ]
+            },
+            "organization": {
+              "id": "5831e74d-9993-ebac-f7d0-dcdf18eaeadb",
+              "name": "string",
+              "slug": "string"
+            }
+          }

@@ -1,0 +1,147 @@
+info:
+  name: Create an employee
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/corporate/employees"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "entity_id": "ee6a79cb-3841-17be-96fc-35c369e7842a",
+        "email": "r6AL3ZpM5JAeW@bXinInWH.tqjs",
+        "full_name": "string",
+        "employee_code": null,
+        "department": "string",
+        "job_title": "string",
+        "joined_at": "2021-09-29"
+      }
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employees"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      body:
+        type: json
+        data: |-
+          {
+            "entity_id": "ee6a79cb-3841-17be-96fc-35c369e7842a",
+            "email": "r6AL3ZpM5JAeW@bXinInWH.tqjs",
+            "full_name": "string",
+            "employee_code": null,
+            "department": "string",
+            "job_title": "string",
+            "joined_at": "2021-09-29"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "employee": {
+              "id": "99cc0ae0-db46-602d-b92c-05379a8a482f",
+              "user_id": "b4cbc788-7a51-fec8-6783-fe9917e2ce4e",
+              "email": "string",
+              "full_name": "string",
+              "organization_id": "a4cc03f5-83cc-47cf-6532-2133e3337446",
+              "entity_id": "8199aa23-da69-1bdd-4174-b8b5fd1a273f",
+              "entity_code": "string",
+              "roles": [
+                "user",
+                "user"
+              ],
+              "employee_code": null,
+              "department": "string",
+              "job_title": null,
+              "status": "offboarded",
+              "joined_at": null
+            },
+            "temp_password": "string"
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employees"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      body:
+        type: json
+        data: |-
+          {
+            "entity_id": "ee6a79cb-3841-17be-96fc-35c369e7842a",
+            "email": "r6AL3ZpM5JAeW@bXinInWH.tqjs",
+            "full_name": "string",
+            "employee_code": null,
+            "department": "string",
+            "job_title": "string",
+            "joined_at": "2021-09-29"
+          }
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }

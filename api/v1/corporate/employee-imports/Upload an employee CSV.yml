@@ -1,0 +1,134 @@
+info:
+  name: Upload an employee CSV
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/corporate/employee-imports"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: Accept
+      value: application/json
+  body:
+    type: multipart-form
+    data:
+      - name: entity_id
+        type: text
+        value: ca5462a9-fd9d-885b-969b-33a84798d153
+      - name: file
+        type: text
+        value: string
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employee-imports"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      body:
+        type: multipart-form
+        data:
+          - name: entity_id
+            type: text
+            value: ca5462a9-fd9d-885b-969b-33a84798d153
+          - name: file
+            type: text
+            value: string
+    response:
+      status: 202
+      statusText: Accepted
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "2e8c2995-3df5-2b5e-7f53-b3a365666970",
+            "entity_id": "b9f68f74-0135-7ed9-ebc5-d6c509ddd966",
+            "filename": "string",
+            "status": "pending",
+            "total_rows": 579,
+            "success_rows": 879,
+            "failed_rows": 2864,
+            "errors": [
+              {
+                "key_0": "string"
+              },
+              {
+                "key_0": "string"
+              }
+            ]
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employee-imports"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: multipart/form-data
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      body:
+        type: multipart-form
+        data:
+          - name: entity_id
+            type: text
+            value: ca5462a9-fd9d-885b-969b-33a84798d153
+          - name: file
+            type: text
+            value: string
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }

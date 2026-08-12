@@ -1,0 +1,152 @@
+info:
+  name: get benefits
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/v1/corporate/benefits?page=1&page_size=50"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "50"
+      type: query
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employee-imports?page=1&page_size=50"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "50"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "items": [
+              {
+                "id": "0cfc6da7-d364-1e8e-9e16-b42a14eb2fa0",
+                "entity_id": "e20930f8-b64a-6cac-6848-f72f4046ed1a",
+                "filename": "string",
+                "status": "failed",
+                "total_rows": 5580,
+                "success_rows": 6830,
+                "failed_rows": 223,
+                "errors": [
+                  {
+                    "key_0": false,
+                    "key_1": 2029.0752474930707
+                  },
+                  {
+                    "key_0": false,
+                    "key_1": false,
+                    "key_2": true
+                  }
+                ]
+              },
+              {
+                "id": "715765fe-d199-86eb-7820-8e8da03f24fc",
+                "entity_id": "3db5d4a4-5a1f-7173-fabe-04fed963f278",
+                "filename": "string",
+                "status": "failed",
+                "total_rows": 8413,
+                "success_rows": 6717,
+                "failed_rows": 7890,
+                "errors": [
+                  {
+                    "key_0": 8216
+                  },
+                  {
+                    "key_0": "string",
+                    "key_1": 1343,
+                    "key_2": true,
+                    "key_3": "string"
+                  }
+                ]
+              }
+            ],
+            "total": 8824,
+            "page": 4251,
+            "page_size": 1473
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employee-imports?page=1&page_size=50"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "50"
+          type: query
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }

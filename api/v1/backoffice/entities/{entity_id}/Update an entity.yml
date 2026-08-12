@@ -1,0 +1,146 @@
+info:
+  name: Update an entity
+  type: http
+  seq: 1
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/v1/backoffice/entities/:entity_id"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  params:
+    - name: entity_id
+      value: 97911f27-72b2-aefa-ddcb-bdfaada34d3f
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "name": null,
+        "country_code": null,
+        "currency": null,
+        "registration_no": "string",
+        "tax_id": "string",
+        "status": null
+      }
+  auth:
+    type: bearer
+    token: "{{bearerToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/backoffice/entities/:entity_id"
+      method: PATCH
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: entity_id
+          value: 97911f27-72b2-aefa-ddcb-bdfaada34d3f
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "name": null,
+            "country_code": null,
+            "currency": null,
+            "registration_no": "string",
+            "tax_id": "string",
+            "status": null
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "id": "6b988bdd-02bd-b1c3-b3e6-0e56aaac43c1",
+            "organization_id": "2c500298-8e0c-6b76-bac7-b8be9afd8bd6",
+            "name": "string",
+            "code": "string",
+            "country_code": "string",
+            "currency": "string",
+            "registration_no": "string",
+            "tax_id": "string",
+            "status": "inactive"
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/backoffice/entities/:entity_id"
+      method: PATCH
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
+      params:
+        - name: entity_id
+          value: 97911f27-72b2-aefa-ddcb-bdfaada34d3f
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "name": null,
+            "country_code": null,
+            "currency": null,
+            "registration_no": "string",
+            "tax_id": "string",
+            "status": null
+          }
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }
