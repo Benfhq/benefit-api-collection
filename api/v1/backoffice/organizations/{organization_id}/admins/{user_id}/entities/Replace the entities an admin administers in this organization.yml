@@ -13,23 +13,28 @@ http:
       value: application/json
   params:
     - name: organization_id
-      value: 49eda4d3-728a-4c01-8478-8a15a8a68b28
+      value: 829634e1-e8ad-4cc0-963c-9d19bbb3584e
       type: path
     - name: user_id
-      value: 5b19ef79-a9d8-4727-adf2-243686315a15
+      value: 5538ca8a-d784-4961-b3d2-4f8cacce89ca
       type: path
   body:
     type: json
-    data: |-
+    data: |
       {
         "entity_ids": [
-          "49983e16-d665-4653-82e9-830924931aaa",
-          "abd88f0e-2da9-4a86-8168-45cf5cca649d"
+          "4cdd0cbf-7a61-467c-8e14-d3d6390e09dd",
+          "fb306995-7fb6-4440-801b-819c8260c6f8"
         ]
       }
   auth:
     type: bearer
     token: "{{bearerToken}}"
+
+runtime:
+  variables:
+    - name: bearerToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcHNAcGluZS5jb20iLCJwZXJzb25hIjoiYmFja29mZmljZSIsImVtcCI6bnVsbCwib3JnIjpudWxsLCJyZXN0cmljdGVkIjpmYWxzZSwidHlwIjoiYWNjZXNzIiwianRpIjoiODgwZTA5ZTctZDMwZC00NzRmLTg3MjYtNjA2ZDI5MGU3ZjM1IiwiaWF0IjoxNzg2NTI0NjcxLCJleHAiOjE3ODY1NTM0NzF9.qIyrZkDB6FPEmuRzQVZbXNufq24Y8TESuDFC4cVEozY
 
 settings:
   encodeUrl: true
@@ -49,7 +54,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       params:
         - name: organization_id
           value: fd439814-7537-5822-bf7b-825a81b69845
@@ -90,7 +94,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       params:
         - name: organization_id
           value: fd439814-7537-5822-bf7b-825a81b69845

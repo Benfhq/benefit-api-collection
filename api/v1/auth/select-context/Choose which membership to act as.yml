@@ -13,10 +13,10 @@ http:
       value: application/json
   body:
     type: json
-    data: |-
+    data: |
       {
-        "refresh_token": "string",
-        "employee_id": "012bd58a-4599-ba16-23f6-ee2df35f06ed"
+        "refresh_token": "w01dPF8uvYyOwlzSTzV93HNUXS-SRGkVVNEfN8csT17X13LRD_lhE3FBEzh2oUcp",
+        "employee_id": "b40b4cec-615d-4288-8865-d52f21d3aabf"
       }
   auth: inherit
 

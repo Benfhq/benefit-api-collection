@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/corporate/employees"
+  url: "{{base_url}}/api/v1/corporate/employees"
   headers:
     - name: Accept
       value: application/json
@@ -24,7 +24,12 @@ http:
       disabled: true
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
+
+runtime:
+  variables:
+    - name: bearerToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NTM4Y2E4YS1kNzg0LTQ5NjEtYjNkMi00ZjhjYWNjZTg5Y2EiLCJwZXJzb25hIjoiY29ycG9yYXRlX2FkbWluIiwiZW1wIjoiM2QxOTJkZjctMDQ0Ni00NDMxLWE4MWEtNWVkMzI0MTgxNGViIiwib3JnIjoiODI5NjM0ZTEtZThhZC00Y2MwLTk2M2MtOWQxOWJiYjM1ODRlIiwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6ImIzN2RkMGQxLWM5OWUtNGM1Ny05NmQ5LWRiMDA0ODAwMjRkNSIsImlhdCI6MTc4NjUyNTQ3NSwiZXhwIjoxNzg2NTI2Mzc1fQ.R-qyUsQp7le5ey7k_9DIJgDCHemrIVaPgnxToYkEaGg
 
 settings:
   encodeUrl: true
@@ -42,7 +47,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       params:
         - name: entity_id
           value: f6c7399a-99e0-2d59-a99c-1236f1e9a74a
@@ -123,7 +127,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       params:
         - name: entity_id
           value: f6c7399a-99e0-2d59-a99c-1236f1e9a74a

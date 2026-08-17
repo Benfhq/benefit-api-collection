@@ -18,9 +18,15 @@ http:
         "email": "nilesh@chronon.co.in",
         "password": "Panara007@"
       }
+
       // {
       //     "email": "ops@pine.com",
       //     "password": "yourpassword"
+      // }
+
+      // {
+      //   "email": "harshit@chronon.co.in",
+      //   "password": "harshit@1234"
       // }
   auth: inherit
 

@@ -13,6 +13,11 @@ http:
     type: bearer
     token: "{{bearerToken}}"
 
+runtime:
+  variables:
+    - name: bearerToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NTM4Y2E4YS1kNzg0LTQ5NjEtYjNkMi00ZjhjYWNjZTg5Y2EiLCJwZXJzb25hIjoiY29ycG9yYXRlX2FkbWluIiwiZW1wIjoiNGYxZDQxMzUtYjM3MC00ZTgwLWI2YzMtODIwNDIyODZlYjFiIiwib3JnIjoiODI5NjM0ZTEtZThhZC00Y2MwLTk2M2MtOWQxOWJiYjM1ODRlIiwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6ImZmNDhkMDhlLTk3OTctNGY0YS05NmU2LThjMTIyYjI4YzI5MiIsImlhdCI6MTc4NjUyNDYzNCwiZXhwIjoxNzg2NTI1NTM0fQ.Bj9tgPiDFsjtnkNIjdMsMr4eJqzWUsUmP_iPdUEgA0A
+
 settings:
   encodeUrl: true
   timeout: 0
@@ -29,7 +34,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
     response:
       status: 200
       statusText: OK

@@ -2,11 +2,22 @@ opencollection: 1.0.0
 
 info:
   name: benefits-api
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
 
 request:
   variables:
     - name: baseUrl
-      value: /
+      value: http://localhost:8010
 
 docs:
   content: Central API for the benefits main app, backoffice and corporate portal

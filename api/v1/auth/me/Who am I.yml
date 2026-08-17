@@ -5,13 +5,18 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/auth/me"
+  url: "{{base_url}}/api/v1/auth/me"
   headers:
     - name: Accept
       value: application/json
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
+
+runtime:
+  variables:
+    - name: bearerToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjE5ZWY3OS1hOWQ4LTQ3MjctYWRmMi0yNDM2ODYzMTVhMTUiLCJwZXJzb25hIjoiY29ycG9yYXRlX2FkbWluIiwiZW1wIjoiY2RjMzU3ZGQtMDNmOS00ZDFmLTk0NjUtNDJlNzkxNzE1ZDEwIiwib3JnIjoiNDllZGE0ZDMtNzI4YS00YzAxLTg0NzgtOGExNWE4YTY4YjI4IiwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6ImM0MTE2NmUwLThkYTgtNDI3My04YmE3LWMzNjJjMjU4ZDJhOCIsImlhdCI6MTc4Njk1ODIzMSwiZXhwIjoxNzg2OTU5MTMxfQ.W0t9rC3bat72O49-vjQa-iUaxuE0BuQFfWStGo3Ov9E
 
 settings:
   encodeUrl: true
@@ -29,7 +34,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
     response:
       status: 200
       statusText: OK

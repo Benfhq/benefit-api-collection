@@ -13,19 +13,19 @@ http:
       value: application/json
   body:
     type: json
-    data: |-
+    data: |
       {
-        "entity_id": "ee6a79cb-3841-17be-96fc-35c369e7842a",
-        "email": "r6AL3ZpM5JAeW@bXinInWH.tqjs",
-        "full_name": "string",
-        "employee_code": null,
-        "department": "string",
-        "job_title": "string",
-        "joined_at": "2021-09-29"
+        "entity_id": "{{entity_id}}",
+        "email": "giri@chronon.co.in",
+        "full_name": "Giridhar Chronon",
+        "employee_code": "EMP004",
+        "job_title": "Sales Software Engineer",
+        "joined_at": "2025-11-18",
+        "option_ids": ["e3c165e2-8e71-401c-a699-9a9117b76b49", "7ee0fa21-b242-436e-9f63-1ad2fcfdda80"]
       }
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 settings:
   encodeUrl: true
@@ -45,7 +45,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       body:
         type: json
         data: |-
@@ -99,7 +98,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       body:
         type: json
         data: |-

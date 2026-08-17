@@ -13,10 +13,12 @@ http:
       value: application/json
   body:
     type: json
-    data: |-
-      {
-        "refresh_token": "TNysB5jUEd70oZUwNzTWKqxJwuEAFLSgS63l4W_gXhN454-Q-awGuBx9qg6n2eYX",
-        "entity_id": "49983e16-d665-4653-82e9-830924931aaa"
+    data: |2
+      
+        
+        {
+        "refresh_token": "_PmYuzgplYHKsAPjTKQE5PQMGGtUO6Se_xt8jiK8IbnOjkBAlfcdUUdQWzD_NeYI",
+        "entity_id": "4cdd0cbf-7a61-467c-8e14-d3d6390e09dd"
       }
   auth: inherit
 

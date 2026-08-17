@@ -1,0 +1,25 @@
+info:
+  name: create employee groups
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/corporate/employee-groups"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Mumbai and Engineering",
+        "match_type": "all",
+        "option_ids": ["e3c165e2-8e71-401c-a699-9a9117b76b49", "7ee0fa21-b242-436e-9f63-1ad2fcfdda80"]
+      }
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

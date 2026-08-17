@@ -20,6 +20,11 @@ http:
     type: bearer
     token: "{{bearerToken}}"
 
+runtime:
+  variables:
+    - name: bearerToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjE5ZWY3OS1hOWQ4LTQ3MjctYWRmMi0yNDM2ODYzMTVhMTUiLCJwZXJzb25hIjoiY29ycG9yYXRlX2FkbWluIiwiZW1wIjoiYjQwYjRjZWMtNjE1ZC00Mjg4LTg4NjUtZDUyZjIxZDNhYWJmIiwib3JnIjoiNDllZGE0ZDMtNzI4YS00YzAxLTg0NzgtOGExNWE4YTY4YjI4IiwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjczYjE5MDMxLTU1ZmQtNDFiYS05ZDMwLTVjMTFlMmIzNDQwOCIsImlhdCI6MTc4Njk1NjExOSwiZXhwIjoxNzg2OTU3MDE5fQ.dlkdcAhX9EBJ6moNOHYfxnkB0E0vlUSKZoi4PeRH-mA
+
 settings:
   encodeUrl: true
   timeout: 0
@@ -36,7 +41,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       params:
         - name: page
           value: "1"
@@ -109,7 +113,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       params:
         - name: page
           value: "1"

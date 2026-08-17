@@ -1,0 +1,24 @@
+info:
+  name: create custom employee fields
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/corporate/employee-fields"
+  body:
+    type: json
+    data: |
+      {
+        "name": "Job Grade",
+        "descirption": "Job grade for the employees in the orgnizations"
+      }
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

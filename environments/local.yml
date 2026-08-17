@@ -1,0 +1,12 @@
+name: local
+variables:
+  - secret: true
+    name: auth_token
+  - name: base_url
+    value: http://localhost:8010
+  - name: employee_field_id
+    value: b9fe5f61-98d0-4912-87f1-45e1fb029fa1
+  - name: entity_id
+    value: 49983e16-d665-4653-82e9-830924931aaa
+  - name: group_id
+    value: 7fdfa15c-3e02-4dcd-8bb7-91b8b043903c

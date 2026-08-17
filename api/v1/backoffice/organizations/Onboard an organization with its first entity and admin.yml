@@ -21,6 +21,11 @@ http:
     type: bearer
     token: "{{bearerToken}}"
 
+runtime:
+  variables:
+    - name: bearerToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcHNAcGluZS5jb20iLCJwZXJzb25hIjoiYmFja29mZmljZSIsImVtcCI6bnVsbCwib3JnIjpudWxsLCJyZXN0cmljdGVkIjpmYWxzZSwidHlwIjoiYWNjZXNzIiwianRpIjoiMmNjOGI3NTctMWQ1Yy00YWNiLWJkYjMtN2EyNzQ2OGI2NDdjIiwiaWF0IjoxNzg2NTIyNzQ0LCJleHAiOjE3ODY1NTE1NDR9.nPw0tMnXwoqoTrKwtnyCKFT52QCZ_R-0KAmZFPK7IaY
+
 settings:
   encodeUrl: true
   timeout: 0
@@ -39,7 +44,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       body:
         type: json
         data: |-
@@ -107,7 +111,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       body:
         type: json
         data: |

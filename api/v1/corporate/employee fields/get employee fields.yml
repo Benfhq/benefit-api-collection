@@ -1,0 +1,22 @@
+info:
+  name: get employee fields
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/corporate/employee-fields"
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+runtime:
+  variables:
+    - name: bearerToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjE5ZWY3OS1hOWQ4LTQ3MjctYWRmMi0yNDM2ODYzMTVhMTUiLCJwZXJzb25hIjoiY29ycG9yYXRlX2FkbWluIiwiZW1wIjoiY2RjMzU3ZGQtMDNmOS00ZDFmLTk0NjUtNDJlNzkxNzE1ZDEwIiwib3JnIjoiNDllZGE0ZDMtNzI4YS00YzAxLTg0NzgtOGExNWE4YTY4YjI4IiwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6ImM0MTE2NmUwLThkYTgtNDI3My04YmE3LWMzNjJjMjU4ZDJhOCIsImlhdCI6MTc4Njk1ODIzMSwiZXhwIjoxNzg2OTU5MTMxfQ.W0t9rC3bat72O49-vjQa-iUaxuE0BuQFfWStGo3Ov9E
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
