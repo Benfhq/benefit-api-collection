@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/backoffice/organizations?page=1&page_size=50"
+  url: "{{base_url}}/api/v1/backoffice/organizations?page=1&page_size=50"
   headers:
     - name: Accept
       value: application/json
@@ -18,12 +18,16 @@ http:
       type: query
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 runtime:
   variables:
     - name: bearerToken
       value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcHNAcGluZS5jb20iLCJwZXJzb25hIjoiYmFja29mZmljZSIsImVtcCI6bnVsbCwib3JnIjpudWxsLCJyZXN0cmljdGVkIjpmYWxzZSwidHlwIjoiYWNjZXNzIiwianRpIjoiODgwZTA5ZTctZDMwZC00NzRmLTg3MjYtNjA2ZDI5MGU3ZjM1IiwiaWF0IjoxNzg2NTI0NjcxLCJleHAiOjE3ODY1NTM0NzF9.qIyrZkDB6FPEmuRzQVZbXNufq24Y8TESuDFC4cVEozY
+    - name: auth_tokes
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zQHBpbmUuY29tIiwicGVyc29uYSI6ImJhY2tvZmZpY2UiLCJlbXAiOm51bGwsIm9yZyI6bnVsbCwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjFiNDUyOWY1LWZjNDAtNGM0YS04ZjM0LWJiZWIwODIxZGRmYyIsImlhdCI6MTc4NzMwMzAwNywiZXhwIjoxNzg3MzMxODA3fQ.WkQY5tGejXUSJG8_iqvGW3EkmpBeVVlBbvxXsRFHyVI
+    - name: auth_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zQHBpbmUuY29tIiwicGVyc29uYSI6ImJhY2tvZmZpY2UiLCJlbXAiOm51bGwsIm9yZyI6bnVsbCwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6ImRkNTY5YzYzLTEwYzEtNDg4Yy04OGFiLTVkODg5MGM1ZWM2YyIsImlhdCI6MTc4NzMwMzE3NCwiZXhwIjoxNzg3MzMxOTc0fQ.AcHpC5mcJFik8YLLpDIAMbgrt0E9db3yY44Vl8xPkzc
 
 settings:
   encodeUrl: true

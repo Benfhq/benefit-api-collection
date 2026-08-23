@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/api/v1/corporate/employees"
+  url: "{{base_url}}/api/v1/corporate/employees"
   headers:
     - name: Content-Type
       value: application/json
@@ -16,12 +16,12 @@ http:
     data: |
       {
         "entity_id": "{{entity_id}}",
-        "email": "giri@chronon.co.in",
-        "full_name": "Giridhar Chronon",
-        "employee_code": "EMP004",
-        "job_title": "Sales Software Engineer",
-        "joined_at": "2025-11-18",
-        "option_ids": ["e3c165e2-8e71-401c-a699-9a9117b76b49", "7ee0fa21-b242-436e-9f63-1ad2fcfdda80"]
+        "email": "harshit@chronon.co.in",
+        "full_name": "Harshit Pant",
+        "employee_code": "EMP001",
+        "job_title": "Senior Software Engineer",
+        "joined_at": "2025-07-13",
+        "option_ids": []
       }
   auth:
     type: bearer

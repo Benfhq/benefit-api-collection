@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/corporate/employees/:employee_id"
+  url: "{{base_url}}/api/v1/corporate/employees/:employee_id"
   headers:
     - name: Accept
       value: application/json
@@ -33,7 +33,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       params:
         - name: employee_id
           value: f6cf9c14-d010-b05d-5c3f-44341cff657d
@@ -74,7 +73,6 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
-          description: "Added as a part of security scheme: bearer"
       params:
         - name: employee_id
           value: f6cf9c14-d010-b05d-5c3f-44341cff657d

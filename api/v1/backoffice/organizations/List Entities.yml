@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/backoffice/organizations?page=1&page_size=50"
+  url: "{{base_url}}/api/v1/backoffice/entities?page=1&page_size=50"
   headers:
     - name: Accept
       value: application/json
@@ -18,7 +18,7 @@ http:
       type: query
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 settings:
   encodeUrl: true

@@ -5,17 +5,13 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id"
+  url: "{{base_url}}/api/v1/backoffice/organizations/"
   headers:
     - name: Accept
       value: application/json
-  params:
-    - name: organization_id
-      value: 829634e1-e8ad-4cc0-963c-9d19bbb3584e
-      type: path
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 runtime:
   variables:

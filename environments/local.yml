@@ -1,12 +1,35 @@
 name: local
 variables:
-  - secret: true
-    name: auth_token
   - name: base_url
     value: http://localhost:8010
+    description: ""
   - name: employee_field_id
     value: b9fe5f61-98d0-4912-87f1-45e1fb029fa1
+    description: ""
   - name: entity_id
-    value: 49983e16-d665-4653-82e9-830924931aaa
+    value: 7efb264a-53d2-4fc2-8824-d04dbf1408e4
+    description: ""
   - name: group_id
     value: 7fdfa15c-3e02-4dcd-8bb7-91b8b043903c
+    description: ""
+  - name: benefit_id
+    value: 89f3f66b-1cf2-4585-aa1c-cfaec2ce93c3
+    description: ""
+  - name: policy_id
+    value: 75a8219b-8506-4ab2-ba4d-4508c7ab7f72
+    description: ""
+  - name: employee_id
+    value: d72f42ed-8abe-4806-9e92-dc803a59dfba
+    description: ""
+  - name: auth_token
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zQHBpbmUuY29tIiwicGVyc29uYSI6ImJhY2tvZmZpY2UiLCJlbXAiOm51bGwsIm9yZyI6bnVsbCwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjFiNDUyOWY1LWZjNDAtNGM0YS04ZjM0LWJiZWIwODIxZGRmYyIsImlhdCI6MTc4NzMwMzAwNywiZXhwIjoxNzg3MzMxODA3fQ.WkQY5tGejXUSJG8_iqvGW3EkmpBeVVlBbvxXsRFHyVI
+    description: ""
+  - name: org_id
+    value: 505a3843-88a0-46e7-8566-858d6662d003
+    description: ""
+  - name: handoff_secret
+    value: ""
+    description: ""
+  - secret: true
+    name: auth_token
+    description: ""

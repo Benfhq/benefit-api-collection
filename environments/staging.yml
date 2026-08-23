@@ -1,0 +1,32 @@
+name: staging
+variables:
+  - name: base_url
+    value: https://benefits-staging.chronon.co.in
+    description: ""
+  - name: employee_field_id
+    value: ""
+    description: ""
+  - name: entity_id
+    value: f0cffe85-5e5a-4cbe-b319-694c6f84b957
+    description: ""
+  - name: employee_id
+    value: ""
+    description: ""
+  - name: benefit_id
+    value: ""
+    description: ""
+  - name: group_id
+    value: ""
+    description: ""
+  - name: policy_id
+    value: ""
+    description: ""
+  - name: auth_token
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwOTM5YzRkYi1jZDEyLTQ5NTgtYTc2My0xYjI3ODg2MDNlNjgiLCJwZXJzb25hIjoiY29ycG9yYXRlX2FkbWluIiwiZW1wIjoiNDcxOThkNTEtYTUwZC00MTNhLTgyNjYtNWI1YjcyMjdmZDFjIiwib3JnIjoiNDVlZGQxOTYtYTVmZi00ZjVmLTg0OTAtYWQ5ZTUyYWU3YjViIiwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjhlNjU4YzFiLTFjODItNGUzOC1iYTkxLWU0N2ZlZDVlMzJjMCIsImlhdCI6MTc4NzMwMzk2NiwiZXhwIjoxNzg3MzA0ODY2fQ.6bxMSeIr-lVFmuqBK-3jpFpVS3Ua31n6MFjICIoamJU"
+    description: ""
+  - name: org_id
+    value: 505a3843-88a0-46e7-8566-858d6662d003
+    description: ""
+  - name: handoff_secret
+    value: pinehandoffsecret
+    description: ""

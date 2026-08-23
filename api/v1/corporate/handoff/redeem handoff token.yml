@@ -1,0 +1,23 @@
+info:
+  name: redeem handoff token
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/auth/handoff/redeem"
+  body:
+    type: json
+    data: |-
+      {
+        "handoff_token": "XETJD13LM-eIry10aBComk3WfwmnZZlaNf4geRuFsdbF3QRUWI1rsiG8JcNZ_km-"
+      }
+  auth:
+    type: bearer
+    token: dev-handoff-secret
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

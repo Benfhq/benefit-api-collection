@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/system/db-time"
+  url: "{{base_url}}/api/v1/system/db-time"
   headers:
     - name: Accept
       value: application/json

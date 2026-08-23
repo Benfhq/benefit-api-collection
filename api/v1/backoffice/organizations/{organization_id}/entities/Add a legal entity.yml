@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/entities"
+  url: "{{base_url}}/api/v1/backoffice/organizations/:organization_id/entities"
   headers:
     - name: Content-Type
       value: application/json
@@ -13,14 +13,14 @@ http:
       value: application/json
   params:
     - name: organization_id
-      value: 829634e1-e8ad-4cc0-963c-9d19bbb3584e
+      value: 505a3843-88a0-46e7-8566-858d6662d003
       type: path
   body:
     type: json
-    data: |-
+    data: |
       {
-        "name": "Setu India Private Limited",
-        "code": "setu111",
+        "name": "Credit Plus India Private Limited",
+        "code": "cplus",
         "country_code": "IN",
         "currency": "INR",
         "registration_no": null,
@@ -28,7 +28,7 @@ http:
       }
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 runtime:
   variables:

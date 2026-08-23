@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/api/v1/auth/select-context"
+  url: "{{base_url}}/api/v1/auth/select-context"
   headers:
     - name: Content-Type
       value: application/json
@@ -15,10 +15,20 @@ http:
     type: json
     data: |
       {
-        "refresh_token": "w01dPF8uvYyOwlzSTzV93HNUXS-SRGkVVNEfN8csT17X13LRD_lhE3FBEzh2oUcp",
-        "employee_id": "b40b4cec-615d-4288-8865-d52f21d3aabf"
+        "refresh_token": "LJ88v4UHaD21nxIoRdHq5ZfTd6bjVI5vrEkOyd6ABLDQdudOxsq7ORHp45azs2y6",
+        "employee_id": "47198d51-a50d-413a-8266-5b5b7227fd1c"
       }
   auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        // Parse JSON response body
+        const data = res.getBody();
+
+        // Set environment variable
+        bru.setEnvVar("auth_token", data.access_token);
 
 settings:
   encodeUrl: true

@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/system/ping"
+  url: "{{base_url}}/api/v1/system/ping"
   headers:
     - name: Accept
       value: application/json

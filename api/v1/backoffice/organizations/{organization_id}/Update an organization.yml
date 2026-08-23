@@ -5,7 +5,7 @@ info:
 
 http:
   method: PATCH
-  url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id"
+  url: "{{base_url}}/api/v1/backoffice/organizations/:organization_id"
   headers:
     - name: Content-Type
       value: application/json
@@ -13,21 +13,20 @@ http:
       value: application/json
   params:
     - name: organization_id
-      value: fd439814-7537-5822-bf7b-825a81b69845
+      value: 505a3843-88a0-46e7-8566-858d6662d003
       type: path
   body:
     type: json
     data: |-
       {
-        "name": null,
-        "status": null,
-        "primary_contact_name": null,
-        "primary_contact_email": null,
-        "primary_contact_phone": "string"
+        "name": "Pinelabs Tech Private Limited",
+        "primary_contact_name": "Nilesh Pant",
+        "primary_contact_email": "nilesh@chronon.co.in",
+        "primary_contact_phone": "6264818572"
       }
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 settings:
   encodeUrl: true

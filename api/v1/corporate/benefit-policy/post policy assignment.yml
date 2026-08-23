@@ -1,0 +1,24 @@
+info:
+  name: post policy assignment
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/corporate/benefit-policies/{{policy_id}}/assignments"
+  body:
+    type: json
+    data: |-
+      {
+        "group_id": "7fdfa15c-3e02-4dcd-8bb7-91b8b043903c",
+        "priority": "1"
+      }
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

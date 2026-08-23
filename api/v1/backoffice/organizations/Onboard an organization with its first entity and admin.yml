@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/api/v1/backoffice/organizations"
+  url: "{{base_url}}/api/v1/backoffice/organizations"
   headers:
     - name: Content-Type
       value: application/json
@@ -15,16 +15,20 @@ http:
     type: json
     data: |-
       {
-          "name": "InboxOS Labs"
+          "name": "Pinelabs Tech Private Limited"
       }
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 runtime:
   variables:
     - name: bearerToken
       value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcHNAcGluZS5jb20iLCJwZXJzb25hIjoiYmFja29mZmljZSIsImVtcCI6bnVsbCwib3JnIjpudWxsLCJyZXN0cmljdGVkIjpmYWxzZSwidHlwIjoiYWNjZXNzIiwianRpIjoiMmNjOGI3NTctMWQ1Yy00YWNiLWJkYjMtN2EyNzQ2OGI2NDdjIiwiaWF0IjoxNzg2NTIyNzQ0LCJleHAiOjE3ODY1NTE1NDR9.nPw0tMnXwoqoTrKwtnyCKFT52QCZ_R-0KAmZFPK7IaY
+    - name: auth_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zQHBpbmUuY29tIiwicGVyc29uYSI6ImJhY2tvZmZpY2UiLCJlbXAiOm51bGwsIm9yZyI6bnVsbCwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6ImRkNTY5YzYzLTEwYzEtNDg4Yy04OGFiLTVkODg5MGM1ZWM2YyIsImlhdCI6MTc4NzMwMzE3NCwiZXhwIjoxNzg3MzMxOTc0fQ.AcHpC5mcJFik8YLLpDIAMbgrt0E9db3yY44Vl8xPkzc
+    - name: auth_tok
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zQHBpbmUuY29tIiwicGVyc29uYSI6ImJhY2tvZmZpY2UiLCJlbXAiOm51bGwsIm9yZyI6bnVsbCwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjFiNDUyOWY1LWZjNDAtNGM0YS04ZjM0LWJiZWIwODIxZGRmYyIsImlhdCI6MTc4NzMwMzAwNywiZXhwIjoxNzg3MzMxODA3fQ.WkQY5tGejXUSJG8_iqvGW3EkmpBeVVlBbvxXsRFHyVI
 
 settings:
   encodeUrl: true

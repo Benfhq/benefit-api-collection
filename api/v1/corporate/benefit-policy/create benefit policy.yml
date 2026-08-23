@@ -1,7 +1,7 @@
 info:
   name: create benefit policy
   type: http
-  seq: 2
+  seq: 1
 
 http:
   method: POST
@@ -10,6 +10,7 @@ http:
     type: json
     data: |
       {
+        "benefit_id": "89f3f66b-1cf2-4585-aa1c-cfaec2ce93c3",
         "name": "Standard Meal Policy",
         "description": "Weekday meal spend for full-time staff.",
         "policy_type": "standard",
@@ -25,7 +26,7 @@ http:
       }
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 settings:
   encodeUrl: true
