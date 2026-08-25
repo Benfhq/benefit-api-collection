@@ -1,18 +1,14 @@
 info:
-  name: post policy assignment
+  name: get policy assignment
   type: http
-  seq: 4
+  seq: 5
 
 http:
-  method: POST
+  method: GET
   url: "{{base_url}}/api/v1/corporate/benefit-policies/{{policy_id}}/assignments"
   body:
     type: json
-    data: |
-      {
-        "group_id": "862609cd-2c5c-4f61-b451-478c9f252341",
-        "priority": "1"
-      }
+    data: ""
   auth:
     type: bearer
     token: "{{auth_token}}"

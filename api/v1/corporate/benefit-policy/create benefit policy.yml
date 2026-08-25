@@ -5,14 +5,14 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/api/v1/corporate/benefit-policies"
+  url: "{{base_url}}/api/v1/corporate/benefit-policies"
   body:
     type: json
     data: |
       {
-        "benefit_id": "89f3f66b-1cf2-4585-aa1c-cfaec2ce93c3",
-        "name": "Standard Meal Policy",
-        "description": "Weekday meal spend for full-time staff.",
+        "benefit_id": "bba4b89c-e5a2-4f9d-8787-48f8f4393278",
+        "name": "Standard Fuel Policy",
+        "description": "Weekday Fuel spend for full-time staff.",
         "policy_type": "standard",
         "load_limit": {
           "amount": "5000.00",

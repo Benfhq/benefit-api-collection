@@ -1,11 +1,11 @@
 info:
-  name: get all policies
+  name: get claims
   type: http
   seq: 2
 
 http:
   method: GET
-  url: "{{base_url}}/api/v1/corporate/benefit-policies"
+  url: "{{base_url}}/api/v1/me/claims"
   body:
     type: json
     data: ""

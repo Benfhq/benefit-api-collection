@@ -1,11 +1,11 @@
 info:
-  name: get all policies
+  name: de register vehicle
   type: http
-  seq: 2
+  seq: 4
 
 http:
-  method: GET
-  url: "{{base_url}}/api/v1/corporate/benefit-policies"
+  method: POST
+  url: "{{base_url}}/api/v1/corporate/vehicle/{{vehicle_id}}/deregister"
   body:
     type: json
     data: ""
@@ -18,3 +18,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: false

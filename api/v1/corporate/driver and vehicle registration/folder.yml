@@ -1,0 +1,7 @@
+info:
+  name: driver and vehicle registration
+  type: folder
+  seq: 11
+
+request:
+  auth: inherit

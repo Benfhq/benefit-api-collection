@@ -1,17 +1,17 @@
 info:
-  name: post policy assignment
+  name: upload licence
   type: http
-  seq: 4
+  seq: 3
 
 http:
   method: POST
-  url: "{{base_url}}/api/v1/corporate/benefit-policies/{{policy_id}}/assignments"
+  url: "{{base_url}}/api/v1/files"
   body:
     type: json
     data: |
       {
-        "group_id": "862609cd-2c5c-4f61-b451-478c9f252341",
-        "priority": "1"
+        "name": "licence.pdf",
+        "content_type": "application/pdf"
       }
   auth:
     type: bearer
@@ -22,3 +22,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: false

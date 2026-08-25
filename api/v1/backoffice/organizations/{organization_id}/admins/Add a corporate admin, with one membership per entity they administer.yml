@@ -15,8 +15,8 @@ http:
     type: json
     data: |
       {
-        "email": "nilesh@chronon.co.in",
-        "full_name": "Nilesh Pant",
+        "email": "elon@chronon.co.in",
+        "full_name": "Elon Musk",
         "entity_ids": [
           "f0cffe85-5e5a-4cbe-b319-694c6f84b957"
         ],
@@ -38,6 +38,7 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
 
 examples:
   - name: Successful Response

@@ -5,17 +5,17 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/corporate/employee-imports/:import_id"
+  url: "{{base_url}}/api/v1/corporate/employee-imports/:import_id"
   headers:
     - name: Accept
       value: application/json
   params:
     - name: import_id
-      value: 119f54d2-4103-2ea7-4753-d0583baae164
+      value: ad8dadeb-e6b3-4d51-86b0-dfc3ceb7a2f8
       type: path
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 settings:
   encodeUrl: true

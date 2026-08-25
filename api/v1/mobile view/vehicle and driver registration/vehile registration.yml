@@ -1,17 +1,16 @@
 info:
-  name: post policy assignment
+  name: vehile registration
   type: http
-  seq: 4
+  seq: 1
 
 http:
   method: POST
-  url: "{{base_url}}/api/v1/corporate/benefit-policies/{{policy_id}}/assignments"
+  url: "{{base_url}}/api/v1/me/vehicles"
   body:
     type: json
     data: |
       {
-        "group_id": "862609cd-2c5c-4f61-b451-478c9f252341",
-        "priority": "1"
+        "registration_number": "MP04ZN1844"
       }
   auth:
     type: bearer
@@ -22,3 +21,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: false

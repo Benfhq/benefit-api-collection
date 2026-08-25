@@ -16,13 +16,15 @@ http:
     data:
       - name: entity_id
         type: text
-        value: ca5462a9-fd9d-885b-969b-33a84798d153
+        value: f0cffe85-5e5a-4cbe-b319-694c6f84b957
       - name: file
-        type: text
-        value: string
+        type: file
+        value:
+          - /Users/abcom/Desktop/staff.csv
+        contentType: text/csv; charset=utf-8
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 settings:
   encodeUrl: true

@@ -1,11 +1,11 @@
 info:
-  name: get all policies
+  name: submit vehicle for approval
   type: http
   seq: 2
 
 http:
-  method: GET
-  url: "{{base_url}}/api/v1/corporate/benefit-policies"
+  method: POST
+  url: "{{base_url}}/api/v1/me/vehicles/{{vehicle_id}}/submit"
   body:
     type: json
     data: ""
@@ -18,3 +18,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: false

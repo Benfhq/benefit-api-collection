@@ -1,0 +1,41 @@
+info:
+  name: get driving licence details
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: https://eve.idfy.com/v3/tasks/sync/verify_with_source/ind_driving_license
+  headers:
+    - name: api-key
+      value: ba09d290-ee0f-404a-91aa-53f67bb51999
+    - name: account-id
+      value: fd6682f5db49/6732f677-fb48-4748-a225-c6fc0eaaec1f
+  body:
+    type: json
+    data: |-
+      {
+          "task_id": "74f4c926-250c-43ca-9c53-453e87ceacd1",
+          "group_id": "8e16424a-58fc-4ba4-ab20-5bc8e7c3c41e",
+          "data": 
+          {
+              "id_number": "MP2820220000145",
+              "date_of_birth": "2002-07-13",
+               "advanced_details":
+                  {
+                    "state_info" : true,
+                    "age_info": true
+                }
+
+          }
+      }
+  auth:
+    type: apikey
+    placement: header
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

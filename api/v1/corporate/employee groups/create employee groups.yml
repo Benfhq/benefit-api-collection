@@ -8,11 +8,11 @@ http:
   url: "{{base_url}}/api/v1/corporate/employee-groups"
   body:
     type: json
-    data: |-
+    data: |
       {
-        "name": "Mumbai and Engineering",
+        "name": "Department Engineering",
         "match_type": "all",
-        "option_ids": ["e3c165e2-8e71-401c-a699-9a9117b76b49", "7ee0fa21-b242-436e-9f63-1ad2fcfdda80"]
+        "option_ids": ["358cb05e-d13d-4b12-befa-78ea7cf8e7b1"]
       }
   auth:
     type: bearer

@@ -1,0 +1,26 @@
+info:
+  name: get vehicle details task
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: https://eve.idfy.com/v3/tasks?request_id=47e8e2d8-1949-431e-ba24-8838bd47694f
+  headers:
+    - name: api-key
+      value: ba09d290-ee0f-404a-91aa-53f67bb51999
+    - name: account-id
+      value: fd6682f5db49/6732f677-fb48-4748-a225-c6fc0eaaec1f
+  params:
+    - name: request_id
+      value: 47e8e2d8-1949-431e-ba24-8838bd47694f
+      type: query
+  auth:
+    type: apikey
+    placement: header
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

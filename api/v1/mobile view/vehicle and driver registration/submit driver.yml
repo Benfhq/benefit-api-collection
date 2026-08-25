@@ -1,11 +1,11 @@
 info:
-  name: get policy assignment copy
+  name: submit driver
   type: http
   seq: 5
 
 http:
-  method: GET
-  url: "{{baseUrl}}/api/v1/corporate/benefit-policies/{{policy_id}}/assignments"
+  method: POST
+  url: "{{base_url}}/api/v1/me/drivers/{{driver_id}}/submit"
   body:
     type: json
     data: ""
@@ -18,3 +18,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: false

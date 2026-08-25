@@ -1,0 +1,24 @@
+info:
+  name: approve vehicle
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/corporate/vehicles/{{vehicle_id}}/approve"
+  body:
+    type: json
+    data: |-
+      {
+        "msg": "loooks good"
+      }
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

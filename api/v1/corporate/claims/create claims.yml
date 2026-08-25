@@ -1,0 +1,28 @@
+info:
+  name: create claims
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/me/claims"
+  body:
+    type: json
+    data: |
+      {
+        "benefit_id": "d9f4251c-9eeb-41ec-8548-17e2fb26f17c",
+        "amount": "4200.00",
+        "expense_date": "2026-08-10",
+        "merchant": "Chai Point",
+        "description": "Team lunch",
+        "file_ids": ["aba53b7a-0509-46dd-921b-20252d8463ab"]
+      }
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

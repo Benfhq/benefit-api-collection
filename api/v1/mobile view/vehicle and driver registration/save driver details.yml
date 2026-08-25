@@ -1,0 +1,28 @@
+info:
+  name: save driver details
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/me/drivers"
+  body:
+    type: json
+    data: |
+      {
+        "licence_number": "MP2820220000145",
+        "date_of_birth": "2002-07-13",
+        "monthly_salary": "18000.00",
+        "start_date": "2026-04-01",
+        "driver_licence_pdf": "{{file_id}}"
+      }
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

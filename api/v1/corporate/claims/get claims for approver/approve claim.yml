@@ -1,0 +1,25 @@
+info:
+  name: approve claim
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/corporate/claims/{{claim_id}}/approve"
+  body:
+    type: json
+    data: '{ "decision_note": "Approved, receipt checked." }'
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+runtime:
+  variables:
+    - name: claim_id
+      value: b0c140fd-7d7a-4724-a45e-d207d02c1f5f
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

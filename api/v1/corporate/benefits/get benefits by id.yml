@@ -1,23 +1,22 @@
 info:
-  name: update benefit status
+  name: get benefits by id
   type: http
-  seq: 2
+  seq: 3
 
 http:
-  method: POST
-  url: "{{base_url}}/api/v1/corporate/benefits/{{benefit_id}}/status"
+  method: GET
+  url: "{{base_url}}/api/v1/me/benefits/bba4b89c-e5a2-4f9d-8787-48f8f4393278"
   headers:
     - name: Accept
       value: application/json
-  body:
-    type: json
-    data: |-
-      {
-        "status": "active"
-      }
   auth:
     type: bearer
     token: "{{auth_token}}"
+
+runtime:
+  variables:
+    - name: bearerToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjE5ZWY3OS1hOWQ4LTQ3MjctYWRmMi0yNDM2ODYzMTVhMTUiLCJwZXJzb25hIjoiY29ycG9yYXRlX2FkbWluIiwiZW1wIjoiYjQwYjRjZWMtNjE1ZC00Mjg4LTg4NjUtZDUyZjIxZDNhYWJmIiwib3JnIjoiNDllZGE0ZDMtNzI4YS00YzAxLTg0NzgtOGExNWE4YTY4YjI4IiwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjczYjE5MDMxLTU1ZmQtNDFiYS05ZDMwLTVjMTFlMmIzNDQwOCIsImlhdCI6MTc4Njk1NjExOSwiZXhwIjoxNzg2OTU3MDE5fQ.dlkdcAhX9EBJ6moNOHYfxnkB0E0vlUSKZoi4PeRH-mA
 
 settings:
   encodeUrl: true

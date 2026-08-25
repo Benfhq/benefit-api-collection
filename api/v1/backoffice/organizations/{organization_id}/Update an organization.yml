@@ -13,7 +13,7 @@ http:
       value: application/json
   params:
     - name: organization_id
-      value: 505a3843-88a0-46e7-8566-858d6662d003
+      value: 45edd196-a5ff-4f5f-8490-ad9e52ae7b5b
       type: path
   body:
     type: json

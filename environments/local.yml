@@ -2,34 +2,29 @@ name: local
 variables:
   - name: base_url
     value: http://localhost:8010
-    description: ""
   - name: employee_field_id
-    value: b9fe5f61-98d0-4912-87f1-45e1fb029fa1
-    description: ""
+    value: 6d4ba23d-00dd-42a0-a2da-ce9afcf8aa0c
   - name: entity_id
     value: 7efb264a-53d2-4fc2-8824-d04dbf1408e4
-    description: ""
   - name: group_id
-    value: 7fdfa15c-3e02-4dcd-8bb7-91b8b043903c
-    description: ""
+    value: 862609cd-2c5c-4f61-b451-478c9f252341
   - name: benefit_id
-    value: 89f3f66b-1cf2-4585-aa1c-cfaec2ce93c3
-    description: ""
+    value: bba4b89c-e5a2-4f9d-8787-48f8f4393278
   - name: policy_id
-    value: 75a8219b-8506-4ab2-ba4d-4508c7ab7f72
-    description: ""
+    value: a8897ca3-d21d-466d-b92f-fde3d9fef439
   - name: employee_id
-    value: d72f42ed-8abe-4806-9e92-dc803a59dfba
-    description: ""
+    value: 57fe294d-036d-4d60-a47f-4e4e2a96feba
   - name: auth_token
     value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zQHBpbmUuY29tIiwicGVyc29uYSI6ImJhY2tvZmZpY2UiLCJlbXAiOm51bGwsIm9yZyI6bnVsbCwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjFiNDUyOWY1LWZjNDAtNGM0YS04ZjM0LWJiZWIwODIxZGRmYyIsImlhdCI6MTc4NzMwMzAwNywiZXhwIjoxNzg3MzMxODA3fQ.WkQY5tGejXUSJG8_iqvGW3EkmpBeVVlBbvxXsRFHyVI
-    description: ""
   - name: org_id
-    value: 505a3843-88a0-46e7-8566-858d6662d003
-    description: ""
+    value: 45edd196-a5ff-4f5f-8490-ad9e52ae7b5b
   - name: handoff_secret
     value: ""
-    description: ""
+  - name: vehicle_id
+    value: 37513655-ef97-4e3a-b390-6b38c367019e
+  - name: file_id
+    value: 32381612-d861-4126-926c-4a62896505d9
+  - name: driver_id
+    value: 37513655-ef97-4e3a-b390-6b38c367019e
   - secret: true
     name: auth_token
-    description: ""

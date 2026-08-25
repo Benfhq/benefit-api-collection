@@ -16,16 +16,16 @@ http:
     data: |
       // {
       //   "email": "nilesh@chronon.co.in",
-      //   "password": "Panara007@"
+      //   "password": "Chronon@1234"
       // }
+
+      {
+          "email": "ops@pine.com",
+          "password": "yourpassword"
+      }
 
       // {
       //     "email": "ops@pine.com",
-      //     "password": "yourpassword"
-      // }
-
-      // {
-      //     "email": "operations@pine.com",
       //     "password": "yourpassword"
       // }
 
@@ -33,7 +33,7 @@ http:
 
       // {
       //   "email": "harshit@chronon.co.in",
-      //   "password": "harshit@1234"
+      //   "password": "Chronon@123"
       // }
   auth: inherit
 
@@ -42,6 +42,7 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
 
 examples:
   - name: Successful Response
