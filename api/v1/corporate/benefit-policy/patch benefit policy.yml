@@ -1,0 +1,36 @@
+info:
+  name: patch benefit policy
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{base_url}}/api/v1/corporate/benefit-policies/{{policy_id}}"
+  body:
+    type: json
+    data: |
+      {
+        "benefit_id": "bba4b89c-e5a2-4f9d-8787-48f8f4393278",
+        "name": "Standard Fuel Policy",
+        "description": "Weekday Fuel spend for full-time staff.",
+        "policy_type": "standard",
+        "load_limit": {
+          "amount": "5001.00",
+          "frequency": "monthly"
+        },
+        "transaction_limit": {
+          "amount": "500.00",
+          "frequency": "daily"
+        },
+        "status": "active"
+      }
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

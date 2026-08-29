@@ -1,0 +1,188 @@
+info:
+  name: open a conversation (1)
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}/api/v1/me/assistant/messages"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: status
+      value: offboarded
+      type: query
+      disabled: true
+    - name: department
+      value: string
+      type: query
+      disabled: true
+    - name: q
+      value: string
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "text": "i want to register my car??"
+      }
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+runtime:
+  variables:
+    - name: bearerToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NTM4Y2E4YS1kNzg0LTQ5NjEtYjNkMi00ZjhjYWNjZTg5Y2EiLCJwZXJzb25hIjoiY29ycG9yYXRlX2FkbWluIiwiZW1wIjoiM2QxOTJkZjctMDQ0Ni00NDMxLWE4MWEtNWVkMzI0MTgxNGViIiwib3JnIjoiODI5NjM0ZTEtZThhZC00Y2MwLTk2M2MtOWQxOWJiYjM1ODRlIiwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6ImIzN2RkMGQxLWM5OWUtNGM1Ny05NmQ5LWRiMDA0ODAwMjRkNSIsImlhdCI6MTc4NjUyNTQ3NSwiZXhwIjoxNzg2NTI2Mzc1fQ.R-qyUsQp7le5ey7k_9DIJgDCHemrIVaPgnxToYkEaGg
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
+
+examples:
+  - name: Successful Response
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employees?entity_id=f6c7399a-99e0-2d59-a99c-1236f1e9a74a&status=offboarded&department=string&q=string&page=1&page_size=50"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+      params:
+        - name: entity_id
+          value: f6c7399a-99e0-2d59-a99c-1236f1e9a74a
+          type: query
+        - name: status
+          value: offboarded
+          type: query
+        - name: department
+          value: string
+          type: query
+        - name: q
+          value: string
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "50"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "items": [
+              {
+                "id": "13121714-1068-5ee5-d036-95c8f8b1b6d6",
+                "user_id": "e23435ad-be73-1d2e-9a83-dc3b0c322c7e",
+                "email": "string",
+                "full_name": "string",
+                "organization_id": "f4d29ad1-9d68-7845-6b72-9bc8809a4953",
+                "entity_id": "95be9cda-9f88-1ce5-b824-fd72a30547f3",
+                "entity_code": "string",
+                "roles": [
+                  "user",
+                  "hr"
+                ],
+                "employee_code": "string",
+                "department": null,
+                "job_title": "string",
+                "status": "active",
+                "joined_at": "2000-10-16"
+              },
+              {
+                "id": "ae084c99-7583-215c-f0c7-02329d3f4583",
+                "user_id": "d229a074-a026-3233-d4e6-4351b821f896",
+                "email": "string",
+                "full_name": "string",
+                "organization_id": "408acc06-4d68-d018-2a7c-8cde20636b90",
+                "entity_id": "54ca24e1-b756-bb70-41ae-a89c9bb4c294",
+                "entity_code": "string",
+                "roles": [
+                  "admin",
+                  "hr"
+                ],
+                "employee_code": "string",
+                "department": "string",
+                "job_title": null,
+                "status": "active",
+                "joined_at": null
+              }
+            ],
+            "total": 2105,
+            "page": 7703,
+            "page_size": 4710
+          }
+  - name: Validation Error
+    request:
+      url: "{{baseUrl}}/api/v1/corporate/employees?entity_id=f6c7399a-99e0-2d59-a99c-1236f1e9a74a&status=offboarded&department=string&q=string&page=1&page_size=50"
+      method: GET
+      headers:
+        - name: Accept
+          value: application/json
+        - name: Authorization
+          value: Bearer <token>
+      params:
+        - name: entity_id
+          value: f6c7399a-99e0-2d59-a99c-1236f1e9a74a
+          type: query
+        - name: status
+          value: offboarded
+          type: query
+        - name: department
+          value: string
+          type: query
+        - name: q
+          value: string
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "50"
+          type: query
+    response:
+      status: 422
+      statusText: Unprocessable Entity (WebDAV) (RFC 4918)
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "detail": [
+              {
+                "loc": [
+                  "string",
+                  4591
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              },
+              {
+                "loc": [
+                  "string",
+                  5818
+                ],
+                "msg": "string",
+                "type": "string",
+                "input": "",
+                "ctx": {}
+              }
+            ]
+          }

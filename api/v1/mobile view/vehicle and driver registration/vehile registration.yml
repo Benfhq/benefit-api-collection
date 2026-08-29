@@ -10,7 +10,9 @@ http:
     type: json
     data: |
       {
-        "registration_number": "MP04ZN1844"
+        "registration_number": "MP28ZK7656",
+        "ownership_type": "company",
+        "usage_type": "self_and_company"
       }
   auth:
     type: bearer

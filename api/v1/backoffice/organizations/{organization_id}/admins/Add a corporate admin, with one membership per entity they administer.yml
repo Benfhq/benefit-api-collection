@@ -15,10 +15,10 @@ http:
     type: json
     data: |
       {
-        "email": "elon@chronon.co.in",
+        "email": "nilesh+2025@chronon.co.in",
         "full_name": "Elon Musk",
         "entity_ids": [
-          "f0cffe85-5e5a-4cbe-b319-694c6f84b957"
+          "7efb264a-53d2-4fc2-8824-d04dbf1408e4"
         ],
         "roles": [
           "admin"

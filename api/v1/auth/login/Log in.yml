@@ -13,29 +13,41 @@ http:
       value: application/json
   body:
     type: json
-    data: |
-      // {
-      //   "email": "nilesh@chronon.co.in",
-      //   "password": "Chronon@1234"
-      // }
-
+    data: |-
       {
-          "email": "ops@pine.com",
-          "password": "yourpassword"
+        "email": "nilesh@chronon.co.in",
+        "password": "Chronon@1234"
       }
-
       // {
       //     "email": "ops@pine.com",
       //     "password": "yourpassword"
       // }
-
-
-
+      // {
+      //     "email": "ops@pine.com",
+      //     "password": "yourpassword"
+      // }
+      // {
+      //   "email": "elon@chronon.co.in",
+      //   "password": "Chronon@1234"
+      // }
+      // {
+      //   "email": "assistant.demo@chronon.co.in",
+      //   "password": "AssistantDemo123!"
+      // }
       // {
       //   "email": "harshit@chronon.co.in",
       //   "password": "Chronon@123"
       // }
   auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const data = res.getBody();
+
+        // Set environment variable
+        bru.setEnvVar("auth_token", data.access_token);
 
 settings:
   encodeUrl: true

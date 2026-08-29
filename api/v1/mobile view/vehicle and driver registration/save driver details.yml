@@ -8,13 +8,12 @@ http:
   url: "{{base_url}}/api/v1/me/drivers"
   body:
     type: json
-    data: |
+    data: |-
       {
-        "licence_number": "MP2820220000145",
+        "licence_number": "MP2820220000135",
         "date_of_birth": "2002-07-13",
         "monthly_salary": "18000.00",
-        "start_date": "2026-04-01",
-        "driver_licence_pdf": "{{file_id}}"
+        "start_date": "2026-04-01"
       }
   auth:
     type: bearer

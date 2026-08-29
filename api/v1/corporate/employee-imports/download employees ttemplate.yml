@@ -1,18 +1,16 @@
 info:
-  name: Import status and per-row errors
+  name: download employees ttemplate
   type: http
-  seq: 1
+  seq: 3
 
 http:
   method: GET
-  url: "{{base_url}}/api/v1/corporate/employee-imports/:import_id"
+  url: "{{base_url}}/api/v1/corporate/employee-imports/template"
   headers:
+    - name: Content-Type
+      value: multipart/form-data
     - name: Accept
       value: application/json
-  params:
-    - name: import_id
-      value: 80f2af2c-fafc-4c71-a896-eaea5f49eae3
-      type: path
   auth:
     type: bearer
     token: "{{auth_token}}"
@@ -27,21 +25,28 @@ settings:
 examples:
   - name: Successful Response
     request:
-      url: "{{baseUrl}}/api/v1/corporate/employee-imports/:import_id"
-      method: GET
+      url: "{{baseUrl}}/api/v1/corporate/employee-imports"
+      method: POST
       headers:
+        - name: Content-Type
+          value: multipart/form-data
         - name: Accept
           value: application/json
         - name: Authorization
           value: Bearer <token>
           description: "Added as a part of security scheme: bearer"
-      params:
-        - name: import_id
-          value: 119f54d2-4103-2ea7-4753-d0583baae164
-          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: entity_id
+            type: text
+            value: ca5462a9-fd9d-885b-969b-33a84798d153
+          - name: file
+            type: text
+            value: string
     response:
-      status: 200
-      statusText: OK
+      status: 202
+      statusText: Accepted
       headers:
         - name: Content-Type
           value: application/json
@@ -67,18 +72,25 @@ examples:
           }
   - name: Validation Error
     request:
-      url: "{{baseUrl}}/api/v1/corporate/employee-imports/:import_id"
-      method: GET
+      url: "{{baseUrl}}/api/v1/corporate/employee-imports"
+      method: POST
       headers:
+        - name: Content-Type
+          value: multipart/form-data
         - name: Accept
           value: application/json
         - name: Authorization
           value: Bearer <token>
           description: "Added as a part of security scheme: bearer"
-      params:
-        - name: import_id
-          value: 119f54d2-4103-2ea7-4753-d0583baae164
-          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: entity_id
+            type: text
+            value: ca5462a9-fd9d-885b-969b-33a84798d153
+          - name: file
+            type: text
+            value: string
     response:
       status: 422
       statusText: Unprocessable Entity (WebDAV) (RFC 4918)

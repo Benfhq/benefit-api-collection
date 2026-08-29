@@ -1,14 +1,19 @@
 info:
-  name: submit driver
+  name: get pending tasks
   type: http
-  seq: 6
+  seq: 7
 
 http:
   method: POST
-  url: "{{base_url}}/api/v1/me/drivers/{{driver_id}}/submit"
+  url: "{{base_url}}/api/v1/me/vehicles"
   body:
     type: json
-    data: ""
+    data: |
+      {
+        "registration_number": "MP28ZK7656",
+        "ownership_type": "company",
+        "usage_type": "self_and_company"
+      }
   auth:
     type: bearer
     token: "{{auth_token}}"

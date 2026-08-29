@@ -1,0 +1,30 @@
+info:
+  name: upload bytes
+  type: http
+  seq: 3
+
+http:
+  method: put
+  url: "{{upload_url}}"
+  headers:
+    - name: Content-Type
+      value: application/pdf
+  body:
+    type: file
+    data:
+      - filePath: /Users/abcom/Downloads/WhatsApp Image 2026-03-08 at 1.15.11 PM.jpeg
+        contentType: image/jpeg
+        selected: true
+  auth: inherit
+
+runtime:
+  variables:
+    - name: upload_url
+      value: http://localhost:9000/benefits/45edd196-a5ff-4f5f-8490-ad9e52ae7b5b/91092661-9b01-4d0e-996f-479071018406/new_bill.jpg?AWSAccessKeyId=minioadmin&Signature=2L6HkNHjrqPWO1QOTa3fLJZr3Kg%3D&content-type=image%2Fjpeg&Expires=1787780716
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
