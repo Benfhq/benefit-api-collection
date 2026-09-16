@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/api/v1/backoffice/organizations/"
+  url: "{{base_url}}/api/v1/backoffice/organizations/6453126a-e2c0-4202-a0bb-44ece6225c86"
   headers:
     - name: Accept
       value: application/json
@@ -23,6 +23,7 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
 
 examples:
   - name: Successful Response

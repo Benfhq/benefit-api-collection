@@ -1,26 +1,17 @@
 info:
-  name: List organizations
+  name: entity admins
   type: http
-  seq: 3
+  seq: 5
 
 http:
   method: GET
-  url: "{{base_url}}/api/v1/backoffice/organizations/505a3843-88a0-46e7-8566-858d6662d003"
+  url: "{{base_url}}/api/v1/backoffice/entities/3016450d-5c72-4c63-9c1d-c2c05824c9bb/admins"
   headers:
     - name: Accept
       value: application/json
   auth:
     type: bearer
     token: "{{auth_token}}"
-
-runtime:
-  variables:
-    - name: bearerToken
-      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcHNAcGluZS5jb20iLCJwZXJzb25hIjoiYmFja29mZmljZSIsImVtcCI6bnVsbCwib3JnIjpudWxsLCJyZXN0cmljdGVkIjpmYWxzZSwidHlwIjoiYWNjZXNzIiwianRpIjoiODgwZTA5ZTctZDMwZC00NzRmLTg3MjYtNjA2ZDI5MGU3ZjM1IiwiaWF0IjoxNzg2NTI0NjcxLCJleHAiOjE3ODY1NTM0NzF9.qIyrZkDB6FPEmuRzQVZbXNufq24Y8TESuDFC4cVEozY
-    - name: auth_tokes
-      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zQHBpbmUuY29tIiwicGVyc29uYSI6ImJhY2tvZmZpY2UiLCJlbXAiOm51bGwsIm9yZyI6bnVsbCwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjFiNDUyOWY1LWZjNDAtNGM0YS04ZjM0LWJiZWIwODIxZGRmYyIsImlhdCI6MTc4NzMwMzAwNywiZXhwIjoxNzg3MzMxODA3fQ.WkQY5tGejXUSJG8_iqvGW3EkmpBeVVlBbvxXsRFHyVI
-    - name: auth_token
-      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zQHBpbmUuY29tIiwicGVyc29uYSI6ImJhY2tvZmZpY2UiLCJlbXAiOm51bGwsIm9yZyI6bnVsbCwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjcyOTVjNjU4LTg3ODktNDQ1ZS1iZjJhLWFiMWZhMmE1Yzc2NyIsImlhdCI6MTc4OTU4MDcyOSwiZXhwIjoxNzg5NjA5NTI5fQ.7Nj6rJO29_3nQ2qb5Y3zXUaYq0yPSyh7d5nq1CKvz6E
 
 settings:
   encodeUrl: true
@@ -39,6 +30,7 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
       params:
         - name: status
           value: onboarding
@@ -95,6 +87,7 @@ examples:
           value: application/json
         - name: Authorization
           value: Bearer <token>
+          description: "Added as a part of security scheme: bearer"
       params:
         - name: status
           value: onboarding

@@ -14,14 +14,21 @@ http:
   body:
     type: json
     data: |-
-      {
-        "email": "nilesh@chronon.co.in",
-        "password": "Chronon@1234"
-      }
       // {
-      //     "email": "ops@pine.com",
+      //   "email": "nilesh@chronon.co.in",
+      //   "password": "Chronon@1234"
+      // }
+
+      // {
+      //   "email": "elon@chronon.co.in",
+      //   "password": "Chronon@1234"
+      // }
+
+      // {
+      //     "email": "operations@pine.com",
       //     "password": "yourpassword"
       // }
+
       // {
       //     "email": "ops@pine.com",
       //     "password": "yourpassword"
@@ -34,10 +41,10 @@ http:
       //   "email": "assistant.demo@chronon.co.in",
       //   "password": "AssistantDemo123!"
       // }
-      // {
-      //   "email": "harshit@chronon.co.in",
-      //   "password": "Chronon@123"
-      // }
+      {
+        "email": "nilesh+setu@chronon.co.in",
+        "password": "Chronon@1234"
+      }
   auth: inherit
 
 runtime:

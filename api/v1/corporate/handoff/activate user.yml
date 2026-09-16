@@ -6,6 +6,16 @@ info:
 http:
   method: POST
   url: "{{base_url}}/api/v1/webhook/activate_user"
+  body:
+    type: json
+    data: |
+      {
+        "registeredMobileNumber": "9403032642",
+        "corporateCode": "EBCUGPL01",
+        "programCode": "EBPPL01",
+        "customerUUID": "1ab60b56-a14f-44d9-913e-cd78d83f4951",
+        "timestamp": "1788246095365"
+      }
   auth:
     type: bearer
     token: pinewebhooksecret

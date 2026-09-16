@@ -1,0 +1,23 @@
+info:
+  name: get effective policies
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base_url}}/api/v1/me/effective-policies"
+  auth:
+    type: bearer
+    token: "{{auth_token}}"
+
+runtime:
+  variables:
+    - name: auth_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiZTYwZWMzNi02Yzg1LTQ3MmYtOGU2Yy1jNjQwODk2M2MxNzgiLCJwZXJzb25hIjoiZW1wbG95ZWUiLCJlbXAiOiJjN2U3OWNkYi1hMTY0LTQzNjItYmQ3OC1iOTNhMGFjNWZjYzMiLCJvcmciOiI1MDVhMzg0My04OGEwLTQ2ZTctODU2Ni04NThkNjY2MmQwMDMiLCJyZXN0cmljdGVkIjpmYWxzZSwidHlwIjoiYWNjZXNzIiwianRpIjoiMjhkNTk4OTgtYTJiMS00OTczLWJjOTktNmQzNTlmNjhlN2MxIiwiaWF0IjoxNzg4MTE3MTEwLCJleHAiOjE3ODgxMTgwMTB9.sA8TsYM52IdDONpy9E5WscDmoM3Ybazk_FEMGRu8uAI
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

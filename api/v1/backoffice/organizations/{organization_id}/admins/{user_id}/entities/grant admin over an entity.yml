@@ -1,46 +1,39 @@
 info:
-  name: Replace the entities an admin administers in this organization
+  name: grant admin over an entity
   type: http
   seq: 1
 
 http:
-  method: PUT
-  url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/admins/:user_id/entities"
+  method: POST
+  url: "{{base_url}}/api/v1/backoffice/entities/{{entity_id}}/admins"
   headers:
     - name: Content-Type
       value: application/json
     - name: Accept
       value: application/json
-  params:
-    - name: organization_id
-      value: 829634e1-e8ad-4cc0-963c-9d19bbb3584e
-      type: path
-    - name: user_id
-      value: 5538ca8a-d784-4961-b3d2-4f8cacce89ca
-      type: path
   body:
     type: json
-    data: |
+    data: |-
       {
-        "entity_ids": [
-          "4cdd0cbf-7a61-467c-8e14-d3d6390e09dd",
-          "fb306995-7fb6-4440-801b-819c8260c6f8"
-        ]
+        "user_id": "635e2b11-0c59-4bd8-8857-4e79b6d3b8cf"
       }
   auth:
     type: bearer
-    token: "{{bearerToken}}"
+    token: "{{auth_token}}"
 
 runtime:
   variables:
     - name: bearerToken
       value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcHNAcGluZS5jb20iLCJwZXJzb25hIjoiYmFja29mZmljZSIsImVtcCI6bnVsbCwib3JnIjpudWxsLCJyZXN0cmljdGVkIjpmYWxzZSwidHlwIjoiYWNjZXNzIiwianRpIjoiODgwZTA5ZTctZDMwZC00NzRmLTg3MjYtNjA2ZDI5MGU3ZjM1IiwiaWF0IjoxNzg2NTI0NjcxLCJleHAiOjE3ODY1NTM0NzF9.qIyrZkDB6FPEmuRzQVZbXNufq24Y8TESuDFC4cVEozY
+    - name: auth_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcGVyYXRpb25zQHBpbmUuY29tIiwicGVyc29uYSI6ImJhY2tvZmZpY2UiLCJlbXAiOm51bGwsIm9yZyI6bnVsbCwicmVzdHJpY3RlZCI6ZmFsc2UsInR5cCI6ImFjY2VzcyIsImp0aSI6IjcyOTVjNjU4LTg3ODktNDQ1ZS1iZjJhLWFiMWZhMmE1Yzc2NyIsImlhdCI6MTc4OTU4MDcyOSwiZXhwIjoxNzg5NjA5NTI5fQ.7Nj6rJO29_3nQ2qb5Y3zXUaYq0yPSyh7d5nq1CKvz6E
 
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
 
 examples:
   - name: Successful Response

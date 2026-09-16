@@ -15,8 +15,8 @@ http:
     type: json
     data: |
       {
-        "refresh_token": "LJ88v4UHaD21nxIoRdHq5ZfTd6bjVI5vrEkOyd6ABLDQdudOxsq7ORHp45azs2y6",
-        "employee_id": "47198d51-a50d-413a-8266-5b5b7227fd1c"
+        "refresh_token": "eb7XeLj3wDFktUnnhwpJiJ6LeA3HdORSBftRrAWRekwsUBXnKI-jYJ-AQ_kfdnua",
+        "employee_id": "00e4f30e-d524-4136-884f-9cd25fad642f"
       }
   auth: inherit
 
@@ -35,6 +35,7 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
 
 examples:
   - name: Successful Response

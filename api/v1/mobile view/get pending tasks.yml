@@ -4,8 +4,8 @@ info:
   seq: 7
 
 http:
-  method: POST
-  url: "{{base_url}}/api/v1/me/vehicles"
+  method: GET
+  url: "{{base_url}}/api/v1/me/pending-tasks"
   body:
     type: json
     data: |

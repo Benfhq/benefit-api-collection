@@ -1,33 +1,35 @@
 info:
-  name: Add a corporate admin, with one membership per entity they administer
+  name: remove admin over an entity copy
   type: http
   seq: 2
 
 http:
-  method: POST
-  url: "{{base_url}}/api/v1/backoffice/organizations/{{org_id}}/admins"
+  method: PUT
+  url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/admins/:user_id/entities"
   headers:
     - name: Content-Type
       value: application/json
     - name: Accept
       value: application/json
+  params:
+    - name: organization_id
+      value: 829634e1-e8ad-4cc0-963c-9d19bbb3584e
+      type: path
+    - name: user_id
+      value: 5538ca8a-d784-4961-b3d2-4f8cacce89ca
+      type: path
   body:
     type: json
     data: |
       {
-        "email": "nilesh+012@chronon.com",
-        "first_name": "Nilesh",
-        "last_name": "Pant",
         "entity_ids": [
-          "3016450d-5c72-4c63-9c1d-c2c05824c9bb"
-        ],
-        "roles": [
-          "admin"
+          "4cdd0cbf-7a61-467c-8e14-d3d6390e09dd",
+          "fb306995-7fb6-4440-801b-819c8260c6f8"
         ]
       }
   auth:
     type: bearer
-    token: "{{auth_token}}"
+    token: "{{bearerToken}}"
 
 runtime:
   variables:
@@ -44,8 +46,8 @@ settings:
 examples:
   - name: Successful Response
     request:
-      url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/admins"
-      method: POST
+      url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/admins/:user_id/entities"
+      method: PUT
       headers:
         - name: Content-Type
           value: application/json
@@ -57,22 +59,20 @@ examples:
         - name: organization_id
           value: fd439814-7537-5822-bf7b-825a81b69845
           type: path
+        - name: user_id
+          value: abb2302e-f0be-ae9a-0f53-fcc2776022fe
+          type: path
       body:
         type: json
         data: |-
           {
-            "email": "zn9oT8GunV7Ul@XNjRJmeOZdLwxtKiHWPZHGRcozFHyDWHA.cwzh",
-            "full_name": "string",
             "entity_ids": [
-              "257ea05b-121f-eb9d-8efa-6cadd0ea3d32"
-            ],
-            "roles": [
-              "admin"
+              "14afba6b-a88a-ae30-4004-330499d419fe"
             ]
           }
     response:
-      status: 201
-      statusText: Created
+      status: 200
+      statusText: OK
       headers:
         - name: Content-Type
           value: application/json
@@ -86,8 +86,8 @@ examples:
           }
   - name: Validation Error
     request:
-      url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/admins"
-      method: POST
+      url: "{{baseUrl}}/api/v1/backoffice/organizations/:organization_id/admins/:user_id/entities"
+      method: PUT
       headers:
         - name: Content-Type
           value: application/json
@@ -99,17 +99,15 @@ examples:
         - name: organization_id
           value: fd439814-7537-5822-bf7b-825a81b69845
           type: path
+        - name: user_id
+          value: abb2302e-f0be-ae9a-0f53-fcc2776022fe
+          type: path
       body:
         type: json
         data: |-
           {
-            "email": "zn9oT8GunV7Ul@XNjRJmeOZdLwxtKiHWPZHGRcozFHyDWHA.cwzh",
-            "full_name": "string",
             "entity_ids": [
-              "257ea05b-121f-eb9d-8efa-6cadd0ea3d32"
-            ],
-            "roles": [
-              "admin"
+              "14afba6b-a88a-ae30-4004-330499d419fe"
             ]
           }
     response:

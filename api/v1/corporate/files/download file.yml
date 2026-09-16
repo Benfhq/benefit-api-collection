@@ -13,6 +13,11 @@ http:
     type: bearer
     token: "{{auth_token}}"
 
+runtime:
+  variables:
+    - name: file_id
+      value: 8817e688-0a24-4fa8-bb1f-8146d1d441e7
+
 settings:
   encodeUrl: true
   timeout: 0

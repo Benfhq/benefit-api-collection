@@ -17,8 +17,8 @@ http:
       
         
         {
-        "refresh_token": "_PmYuzgplYHKsAPjTKQE5PQMGGtUO6Se_xt8jiK8IbnOjkBAlfcdUUdQWzD_NeYI",
-        "entity_id": "4cdd0cbf-7a61-467c-8e14-d3d6390e09dd"
+        "refresh_token": "eb7XeLj3wDFktUnnhwpJiJ6LeA3HdORSBftRrAWRekwsUBXnKI-jYJ-AQ_kfdnua",
+        "entity_id": "f0cffe85-5e5a-4cbe-b319-694c6f84b957"
       }
   auth: inherit
 
@@ -27,6 +27,7 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
 
 examples:
   - name: Successful Response
